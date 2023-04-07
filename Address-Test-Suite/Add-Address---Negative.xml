@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="046cf493-cb44-4a86-be59-e8d2c08f2b35" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Add Address - Negative" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="046cf493-cb44-4a86-be59-e8d2c08f2b35fileName">Add-Address---Negative</con:setting>
+  </con:settings>
+  <con:testStep type="datasource" name="Data Source" id="0cde2166-ec5b-4a3c-8c25-1d3ce5beecc4">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Data Generator">
+        <con:configuration>
+          <generatedDataCount>10</generatedDataCount>
+          <generatorsTotalNumber>8</generatorsTotalNumber>
+          <lastSelectedProperty>0</lastSelectedProperty>
+          <GeneratorType0>NAME</GeneratorType0>
+          <PropertyName0>Full Name</PropertyName0>
+          <repetitionCountFull8fc6659bddc94925bebe7a804e874bb2Name>0</repetitionCountFull8fc6659bddc94925bebe7a804e874bb2Name>
+          <repeatValuesFull8fc6659bddc94925bebe7a804e874bb2Name>false</repeatValuesFull8fc6659bddc94925bebe7a804e874bb2Name>
+          <NameTypeName0>Full</NameTypeName0>
+          <NameGenderName0>Any</NameGenderName0>
+          <GeneratorType1>PHONE</GeneratorType1>
+          <PropertyName1>Phone Number</PropertyName1>
+          <repetitionCountPhone8fc6659bddc94925bebe7a804e874bb2Number>0</repetitionCountPhone8fc6659bddc94925bebe7a804e874bb2Number>
+          <repeatValuesPhone8fc6659bddc94925bebe7a804e874bb2Number>false</repeatValuesPhone8fc6659bddc94925bebe7a804e874bb2Number>
+          <PhoneTemplateTypePhone8fc6659bddc94925bebe7a804e874bb2Number>XXX-XXX-XXXX</PhoneTemplateTypePhone8fc6659bddc94925bebe7a804e874bb2Number>
+          <GeneratorType2>ADDRESS</GeneratorType2>
+          <PropertyName2>Address</PropertyName2>
+          <repetitionCountAddress>0</repetitionCountAddress>
+          <repeatValuesAddress>false</repeatValuesAddress>
+          <AddressDataGeneratorRestrictLength>true</AddressDataGeneratorRestrictLength>
+          <AddressDataGeneratorMaxLength>40</AddressDataGeneratorMaxLength>
+          <GeneratorType3>CUSTOM</GeneratorType3>
+          <PropertyName3>Apartment</PropertyName3>
+          <repetitionCountApartment>0</repetitionCountApartment>
+          <repeatValuesApartment>false</repeatValuesApartment>
+          <CustomStringDataGeneratorFormatApartment>Apt %INT(1,100,false, 1)</CustomStringDataGeneratorFormatApartment>
+          <GeneratorType4>CITY</GeneratorType4>
+          <PropertyName4>City</PropertyName4>
+          <repetitionCountCity>0</repetitionCountCity>
+          <repeatValuesCity>false</repeatValuesCity>
+          <GeneratorType5>STATE</GeneratorType5>
+          <PropertyName5>State</PropertyName5>
+          <repetitionCountState>0</repetitionCountState>
+          <repeatValuesState>false</repeatValuesState>
+          <StatesCountryState>United States</StatesCountryState>
+          <StatesFormatState>Abbreviated</StatesFormatState>
+          <GeneratorType6>USZIP</GeneratorType6>
+          <PropertyName6>Zip Code</PropertyName6>
+          <repetitionCountZip8fc6659bddc94925bebe7a804e874bb2Code>0</repetitionCountZip8fc6659bddc94925bebe7a804e874bb2Code>
+          <repeatValuesZip8fc6659bddc94925bebe7a804e874bb2Code>false</repeatValuesZip8fc6659bddc94925bebe7a804e874bb2Code>
+          <USZipCodesDataGeneratorFormatZip8fc6659bddc94925bebe7a804e874bb2Code>XXXXX</USZipCodesDataGeneratorFormatZip8fc6659bddc94925bebe7a804e874bb2Code>
+          <GeneratorType7>COUNTRY</GeneratorType7>
+          <PropertyName7>Country</PropertyName7>
+          <repetitionCountCountry>0</repetitionCountCountry>
+          <repeatValuesCountry>false</repeatValuesCountry>
+          <escapeSpaceSequence>8fc6659bddc94925bebe7a804e874bb2</escapeSpaceSequence>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>Country</con:property>
+      <con:property>Full Name</con:property>
+      <con:property>Phone Number</con:property>
+      <con:property>Address</con:property>
+      <con:property>Apartment</con:property>
+      <con:property>City</con:property>
+      <con:property>State</con:property>
+      <con:property>Zip Code</con:property>
+      <con:restartOnRun>true</con:restartOnRun>
+      <con:stopDatasourceExhausted>false</con:stopDatasourceExhausted>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="calltestcase" name="Generate Token" id="eb467545-7515-45ed-8dfb-3ce5adb32b55">
+    <con:settings/>
+    <con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:targetTestCase>aa618e6d-0b9e-4b2a-a773-93490d0f0877</con:targetTestCase>
+      <con:properties/>
+      <con:returnProperties/>
+      <con:runMode>PARALLELL</con:runMode>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="REST Request - empty body" id="f4472d7e-cf26-40fc-a6ad-6892f25faf68">
+    <con:settings/>
+    <con:config service="Retail API" resourcePath="/address" methodName="Create new address" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="REST Request - empty body" id="3012efa3-a260-4133-b99f-4433630833d5" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="x-access-token" value="${#[Login Test Suite#Login Test - Positive#REST Request]#Response#$['accessToken']}" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:request>{\r
+   "country" : "",\r
+   "fullName" : "",\r
+   "phoneNumber" : "",\r
+   "street" : "",\r
+   "apartment" : "",\r
+   "city" : "",\r
+   "state" : "",\r
+   "zipCode" : "${Data Source#Zip Code}"\r
+}</con:request>
+        <con:originalUri>https://tek-retail-api.azurewebsites.net/address</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="878d5dba-38bb-4913-ba3f-ab8e28bd939e" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>400</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="d9a558b4-b80a-4b81-b94a-7bbfac161397" name="Response SLA">
+          <con:configuration>
+            <SLA>800</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="2b7a374e-ea96-4173-b634-501c9e2d938e" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['type']</con:path>
+              <con:element>type</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>ValidationError</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['errors']['body']['country'][0]</con:path>
+              <con:element>0</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Country is a required field</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['errors']['body']['fullName'][0]</con:path>
+              <con:element>0</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Full Name is a required field</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['errors']['body']['phoneNumber'][0]</con:path>
+              <con:element>0</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Phone Number is a required field</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['errors']['body']['phoneNumber'][1]</con:path>
+              <con:element>1</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>please enter valid phone number</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['errors']['body']['street'][0]</con:path>
+              <con:element>0</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Street is a required field</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['errors']['body']['city'][0]</con:path>
+              <con:element>0</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>City is a required field</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['errors']['body']['state'][0]</con:path>
+              <con:element>0</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>State is a required field</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{"type":"ValidationError","errors":{"body":{"country":["Country is a required field"],"fullName":["Full Name is a required field"],"phoneNumber":["Phone Number is a required field","please enter valid phone number"],"street":["Street is a required field"],"city":["City is a required field"],"state":["State is a required field"]}}}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="REST Request - wrong country" id="97154b59-e46a-4e25-b904-b8a5ff021c36">
+    <con:settings/>
+    <con:config service="Retail API" resourcePath="/address" methodName="Create new address" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="REST Request - wrong country" id="3012efa3-a260-4133-b99f-4433630833d5" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="x-access-token" value="${#[Login Test Suite#Login Test - Positive#REST Request]#Response#$['accessToken']}" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:request>{\r
+   "country" : "${Data Source#Country}",\r
+   "fullName" : "${Data Source#Full Name}",\r
+   "phoneNumber" : "${Data Source#Phone Number}",\r
+   "street" : "${Data Source#Address}",\r
+   "apartment" : "${Data Source#Apartment}",\r
+   "city" : "${Data Source#City}",\r
+   "state" : "${Data Source#State}",\r
+   "zipCode" : "${Data Source#Zip Code}"\r
+}</con:request>
+        <con:originalUri>https://tek-retail-api.azurewebsites.net/address</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="878d5dba-38bb-4913-ba3f-ab8e28bd939e" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="d9a558b4-b80a-4b81-b94a-7bbfac161397" name="Response SLA">
+          <con:configuration>
+            <SLA>800</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="b4adcbca-cc9e-4014-b3c0-4228d7381f33" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['id']</con:path>
+              <con:element>id</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>6263</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['country']</con:path>
+              <con:element>country</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Data Source#Country}</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['fullName']</con:path>
+              <con:element>fullName</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Data Source#Full Name}</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['phoneNumber']</con:path>
+              <con:element>phoneNumber</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Data Source#Phone Number}</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['street']</con:path>
+              <con:element>street</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Data Source#Address}</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['apartment']</con:path>
+              <con:element>apartment</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Data Source#Apartment}</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['city']</con:path>
+              <con:element>city</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Data Source#City}</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['state']</con:path>
+              <con:element>state</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Data Source#State}</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['zipCode']</con:path>
+              <con:element>zipCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>${Data Source#Zip Code}</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['userId']</con:path>
+              <con:element>userId</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>3804</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['updatedAt']</con:path>
+              <con:element>updatedAt</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>2023-04-07T00:40:31.338Z</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['createdAt']</con:path>
+              <con:element>createdAt</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>2023-04-07T00:40:31.338Z</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{"id":6263,"country":"United States","fullName":"Cullen Carrillo","phoneNumber":"335-240-8668","street":"52907 WestBelize Way","apartment":"Apt 35","city":"Isle of Palms","state":"HI","zipCode":"06424","userId":3804,"updatedAt":"2023-04-07T00:40:31.338Z","createdAt":"2023-04-07T00:40:31.338Z"}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="REST Request - No phone number" id="f34fc315-469c-4fbe-a440-b3e666ef853c">
+    <con:settings/>
+    <con:config service="Retail API" resourcePath="/address" methodName="Create new address" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="REST Request - No phone number" id="3012efa3-a260-4133-b99f-4433630833d5" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="x-access-token" value="${#[Login Test Suite#Login Test - Positive#REST Request]#Response#$['accessToken']}" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:request>{\r
+   "country" : "${Data Source#Country}",\r
+   "fullName" : "${Data Source#Full Name}",\r
+   "phoneNumber" : "",\r
+   "street" : "${Data Source#Address}",\r
+   "apartment" : "${Data Source#Apartment}",\r
+   "city" : "${Data Source#City}",\r
+   "state" : "${Data Source#State}",\r
+   "zipCode" : "${Data Source#Zip Code}"\r
+}</con:request>
+        <con:originalUri>https://tek-retail-api.azurewebsites.net/address</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="878d5dba-38bb-4913-ba3f-ab8e28bd939e" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>400</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="d9a558b4-b80a-4b81-b94a-7bbfac161397" name="Response SLA">
+          <con:configuration>
+            <SLA>800</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="DataAndMetadataAssertion" id="abc16136-3a41-4652-a7b5-84809b78cb5e" name="Smart Assertion 2">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['type']</con:path>
+              <con:element>type</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>ValidationError</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['errors']['body']['phoneNumber'][0]</con:path>
+              <con:element>0</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Phone Number is a required field</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['errors']['body']['phoneNumber'][1]</con:path>
+              <con:element>1</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>please enter valid phone number</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{"type":"ValidationError","errors":{"body":{"phoneNumber":["Phone Number is a required field","please enter valid phone number"]}}}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

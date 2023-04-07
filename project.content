@@ -1,0 +1,6 @@
+Retail-API\login.xml
+Retail-API\address.xml
+Login-Test-Suite\Login-Test---Positive.xml
+Login-Test-Suite\Login-Test---Negative.xml
+Address-Test-Suite\Add-Address---Positive.xml
+Address-Test-Suite\Add-Address---Negative.xml
